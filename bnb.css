@@ -1,110 +1,265 @@
-.nav{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; 
+}
+
+
+header nav {
+    background-color: transparent; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    margin-left:140px;
-    margin-top:50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 10;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover, .cta-btn {
+    background-color: #49705c;
+}
+
+.cta-btn {
+    background-color: #ffffff;
+    color: #5b9279;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-btn:hover {
+    background-color: #ddd;
+}
+
+
+.hero {
+    background-image: url('https://t4.ftcdn.net/jpg/07/57/78/45/360_F_757784532_k80zVkg4162r3bWCBCGSH31uLwJp6MNc.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 120px;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
 }
-.btn{
-    border: 1px solid rgb(224, 158, 205);
-    border-radius: 18px;
-    color:rgb(32, 27, 31);
-    font-size: 21px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgb(187, 154,177);
-    padding:1px auto;
-}
-.h{
-    font-size: 26px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(20, 19, 20);
-}
-.heading{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: 140px;
-    font-size: 30px;
-    margin-top: 30px;
-    color: rgb(94, 15, 70);
 
+.hero h2, .hero p, .hero a {
+    position: relative;
+    z-index: 2; 
 }
-.head2{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-    margin-left: 140px;
-    font-size: 20px;
-    color: rgb(94, 15,70);
+
+.hero h2 {
+    font-size:50px;
+    margin-bottom: 20px;
 }
-.para{
-    font-size: 24px;
-    margin-left: 140px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: rgb(94,15,70);
+
+.hero p {
+    font-size:24px;
+    margin-bottom: 30px;
 }
-.content{
-    font-size:22px;
-    margin-left: 140px;
-    color: rgb(29, 21, 29);
-    margin-top: 50px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+.cta-btn {
+    z-index: 2;
+    padding: 15px 30px;
+    font-size: 1.2rem;
 }
 
 
-  54 changes: 54 additions & 0 deletions 54  
-index.html
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.about-section, .features-section, .contact-section {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.about-section h2, .features-section h2, .contact-section h2 {
+    font-size:35px;
+    margin-bottom: 20px;
+}
+
+.about-section p, .contact-section p {
+    font-size:24px;
+    color: #666;
+}
+
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background-color: rgb(226, 192, 217);
+    border-radius: 5px;
+    padding: 20px;
+    flex-basis: 45%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size:20px;
+    color: #555;
+}
+
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #5b9279;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    background-color:rgb(128, 84, 116);
+    color: black;
+    text-align: center;
+    padding: 20px;
+} 
+  79 changes: 79 additions & 0 deletions 79  
+hack.html
  
 Original file line number	Diff line number	Diff line change
-@@ -0,0 +1,54 @@
+@@ -0,0 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>elysian</title>
-    <link rel="stylesheet" href="bnb.css">
-    <style class="bgimg">
-        body{
-            background-image: url(https://img.freepik.com/premium-photo/fashion-beige-minimalist-background-with-model-girl_118124-51776.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elysian | Home</title>
+    <link rel="stylesheet" href="hack.css">
 </head>
 <body>
-    <div class="elysian">
-        <img src="blob:https://web.whatsapp.com/2cbee6c4-a7c0-4f2c-91cb-38d9529c907e" alt="" class="logo">
-        <div class="nav">
-            <div class="h">
-                <p>Home</p>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Elysian</h1>
             </div>
-            <div class="h">
-                <p>Contact</p>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Elevate your style with Elysian</h2>
+                <p>From hot mess to well dressed! <br>Manage your wardrobe efficiently, reduce overconsumption, and contribute to sustainability.</p>
+                <a href="" class="cta-btn">Login</a>
             </div>
-            <div class="h">
-                <p>About</p>
+        </section>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2>About us</h2>
+            <p>Elysian aims to help people to manage their wardrobes, track their usage, and make more informed, sustainable choices.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Track Usage</h3>
+                    <p>Monitor how often you wear your clothes and accessories, and get reminders for items you haven’t used in a while.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Outfit Suggestions</h3>
+                    <p>Get personalized outfit recommendations without having to dig through your wardrobe.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Sustainability Insights</h3>
+                    <p>Understand how your wardrobe impacts the environment and get tips to reduce your footprint.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Clutter Reduction</h3>
+                    <p>Easily identify items that are rarely worn, so you can donate, sell, or reuse them.</p>
+                </div>
             </div>
+        </section>
 
-            <button class="btn">
-                <p>Sign in</p>
-            </button>
-        </div>
-        <div class="heading">
-            <h1>Elevate your style with elysian.
-            </h1>
-        </div>
-        <div class="head2">
-            <h2>From hot mess,to well dressed!</h2>
-        </div>
-        <div class="para">
-            <p>Use Elysian for free to manage and style your closet</p>
-        </div>
-        <div class="content">
-            <p>See everything you own in your hands.<br>Create and style outfits on the go!</p>
-            <p>Learn what you wear and how you wear it, <br>to help you buy less and better</p>
-            <p>Plan and organise your outfits ahead of time</p>
-        </div>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <p>Reach out to us!</p>
+            <div class="contact-info">
+                <p>Poorvi G B: <a href="tel:+916366613934">+91 6366613934</a></p>
+                <p>Yashwanth: <a href="tel:+919108818576">+91 91088181876</a></p>
+                <p>Syed Ahmed: <a href="tel:+918050898566">+91 8050898566</a></p>
+                <p>Rahita: <a href="tel:+917676068408">+91 7676068408</a></p>
+            </div>
+        </section>
+    </main>
 
-    </div>
-
+    <footer>
+        <p>&copy; 2024 Wardrobe Manager| Powered by Elysian</p>
+    </footer>
 </body>
 </html>
